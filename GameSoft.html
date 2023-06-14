@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="gameSoft.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Campus GameSoft</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid container-nav">
+            <a class="navbar-brand tituloPrincipal" href="#">Campus GameSoft</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Clientes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">
+                                    <button class="btn btn-outline-success" onclick="crearCliente()"
+                                        type="submit">Registrar</button></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Videojuegos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">
+                                    <button class="btn btn-outline-success" type="submit"
+                                        onclick="crearVideojuego()">Crear</button></a></a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">
+                                <button class="btn btn-outline-success" type="submit"
+                                    onclick="crearVideojuego()">Comprar</button></a></a>
+                        </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CUADRO DE REGISTRO DE CLIENTES -->
+
+    <div id="miVentana" class="ventana">
+        <div class="contenido">
+            <form id="miFormularioCliente" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Numero de identificacion</label>
+                    <input type="text" id="identificacion" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Nombres</label>
+                    <input type="text" id="nombres" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Apellidos</label>
+                    <input type="text" id="apellidos" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Telefono</label>
+                    <input type="number" id="telefono" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Correo electronico</label>
+                    <input type="text" id="correo" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Fecha de nacimiento</label>
+                    <input type="date" id="nacimiento" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Nacionalidad</label>
+                    <input type="text" id="nacionalidad" class="form-control" required>
+                </div>
+                <div class="col-md-4 mt-5 botonEnviar">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+            <button class="btn btn-dark" type="submit" onclick="crearClienteCerrar()">Cerrar</button></a></a>
+        </div>
+    </div>
+
+    <!-- CUADRO DE MODIFICACION DE CLIENTES -->
+
+    <div id="modificarCliente" class="ventana">
+        <div class="contenido">
+            <form id="miFormularioClientes" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" id="nombreJuego"class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Tematica</label>
+                    <div class="input-group">
+                        <input type="text" id="tematica"class="form-control" aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Valor licencia</label>
+                    <input type="number" id="valor"class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Puntos</label>
+                    <input type="text" id="puntos"class="form-control" required>
+                </div>
+                <div class="col-md-4 mt-5 botonEnviar">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+            <button class="btn btn-dark" type="submit" onclick="modificarClienteCerrar()">Cerrar</button></a></a>
+        </div>
+    </div>
+
+    <!-- CUADRO DE COMPRA DE VIDEOJUEGOS -->
+
+    <div id="miVentanaCompraJuego" class="ventana">
+        <div class="contenido">
+            <form id="miFormularioVideojuegos" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" id="nombreJuego"class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label"></label>
+                    <div class="input-group">
+                        <input type="text" id="tematica"class="form-control" aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Valor licencia</label>
+                    <input type="number" id="valor"class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Puntos</label>
+                    <input type="text" id="puntos"class="form-control" required>
+                </div>
+                <div class="col-md-4 mt-5 botonEnviar">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+            <button class="btn btn-dark" type="submit" onclick="crearVideojuegoCerrar()">Cerrar</button></a></a>
+        </div>
+    </div>
+
+    <!-- CUADRO DE MODIFICACION PARA VIDEOJUEGOS-->
+
+    <div id="modificarVideojuego" class="ventana">
+        <div class="contenido">
+            <form id="miFormularioVideojuegos" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" id="nombreJuego"class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Tematica</label>
+                    <div class="input-group">
+                        <input type="text" id="tematica"class="form-control" aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Valor licencia</label>
+                    <input type="number" id="valor"class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Puntos</label>
+                    <input type="text" id="puntos"class="form-control" required>
+                </div>
+                <div class="col-md-4 mt-5 botonEnviar">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+            <button class="btn btn-dark" type="submit" onclick="modificarVideojuegoCerrar()">Cerrar</button></a></a>
+        </div>
+    </div>
+
+    <!-- TABLA DE CLIENTES -->
+    
+    <div class="ventanaTabla mt-5">
+    <table>
+        <thead>
+            <tr>
+                <th class="subtitulo">
+                    <h2>CLIENTES</h2>
+                </th>
+            </tr>
+            <tr class="filita">
+                <th class="encabezado">Identificacion</th>
+                <th class="encabezado">Nombres</th>
+                <th class="encabezado">Apellidos</th>
+                <th class="encabezado">Telefono</th>
+                <th class="encabezado">Correo</th>
+                <th class="encabezado">Nacimiento</th>
+                <th class="encabezado">Nacionalidad</th>
+                <th class="encabezado">Opciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-clientes"></tbody>
+    </table>
+    </div>
+
+    <!-- TABLA DE VIDEOJUEGOS -->
+
+    <div class="ventanaTabla">
+        <table class=" miTabla ">
+            <thead>
+                <tr>
+                    <th class="subtitulo">
+                        <h2>VIDEOJUEGOS</h2>
+                    </th>
+                </tr>
+                <tr class="filita">
+                    <th class="encabezado">ID</th>
+                    <th class="encabezado">Nombre</th>
+                    <th class="encabezado">Tematica</th>
+                    <th class="encabezado">Valor</th>
+                    <th class="encabezado">Puntos</th>
+                    <th class="encabezado">Opciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-videojuegos"></tbody>
+        </table>
+    </div>
+
+    <!-- TABLA DE COMPRA DE VIDEOJUEGOS -->
+
+    <div class="ventanaTabla">
+        <table class=" miTabla ">
+            <thead>
+                <tr>
+                    <th class="subtitulo">
+                        <h2>COMPRA</h2>
+                    </th>
+                </tr>
+                <tr class="filita">
+                    <th class="encabezado">Cliente</th>
+                    <th class="encabezado">Videojuego</th>
+                    <th class="encabezado">Valor</th>
+                    <th class="encabezado">IVA</th>
+                    <th class="encabezado">Impuesto especial</th>
+                    <th class="encabezado">Puntos obtenidos</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-videojuegos"></tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="GameSoft.js"></script>
+</body>
+
+</html>

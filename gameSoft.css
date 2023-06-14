@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Shadows+Into+Light&display=swap');
+
+html, body {
+    min-height: 100%;
+}
+
+nav {
+    background-image: linear-gradient(white, rgb(77, 155, 76), rgb(35, 122, 57));
+    color: white;
+}
+
+.tituloPrincipal {
+    font-family: 'Caveat', cursive;
+}
+.encabezado {
+    width: 300px;
+    color: white;
+}
+.botonEnviar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+.ventana {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 400px;
+    background-color: rgb(91, 185, 91);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.ventanaTabla {
+    margin: auto;
+    background-image: linear-gradient(white,rgb(93, 185, 81), rgb(54, 139, 97));
+    width: 1700px;
+    height: 500px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 50px rgb(0, 0, 0);
+    color: white;
+}
+
+.filita {
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0));
+}
+.subtitulo {
+    font-family: 'Shadows Into Light', cursive;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(black, white);
+    color: white;
+    border-radius: 20px;
+    margin: 0 0 10px 0;
+}
